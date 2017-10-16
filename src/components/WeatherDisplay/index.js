@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default function WeatherForm(props) {
-    const {weather} = props;
-    return (
-        <div>
-            <h3>{weather.name},{weather.sys.country}</h3>
-            {weather.main.temp}
-        </div>
-    )
+class WeatherDisplay extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isOpen: false
+        }
+    }
+
+    render() {
+        const {weather} = this.props;
+        return (
+            <div>
+                <h3>{weather.name},{weather.sys.country}</h3>
+                {weather.main.temp}
+            </div>
+        )
+    }
 }
+
+export default WeatherDisplay

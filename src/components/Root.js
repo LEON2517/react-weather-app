@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import WeatherDisplay from './WeatherDisplay'
+import WeatherDisplayList from './WeatherDisplayList'
 import {weather} from '../fixtures'
-
 
 
 export default class Root extends Component {
@@ -9,7 +8,7 @@ export default class Root extends Component {
         return (
             <div>
                 <h1>React Weather App</h1>
-                <WeatherDisplay weather = {weather[0]}/>
+                <WeatherDisplayList weather = {weather}/>
             </div>
         )
     }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function CityForm() {
+export default function WeatherForm(props) {
+    const {weather} = props;
     return (
         <div>
-            <h3>Title</h3>
-            <p>body</p>
+            <h3>{weather.name}</h3>
         </div>
     )
 }

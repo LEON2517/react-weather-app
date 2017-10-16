@@ -1,12 +1,15 @@
 import React from 'react'
 import WeatherDisplay from '../WeatherDisplay'
 
+
 function WeatherDisplayList(props) {
+    const articleElements = props.weather.map(weather =>
+        <li key={weather.id}>
+            <WeatherDisplay weather={weather}/>
+        </li>)
     return (
         <ul>
-            <li><WeatherDisplay weather = {props.weather[0]}/></li>
-            <li><WeatherDisplay weather = {props.weather[0]}/></li>
-            <li><WeatherDisplay weather = {props.weather[0]}/></li>
+            {articleElements}
         </ul>
     )
 }

@@ -16,6 +16,8 @@ class WeatherDisplay extends Component {
             <div>
                 <h3>{weather.name},{weather.sys.country}</h3>
                 {weather.main.temp}
+                {weather.main.pressure}
+                {weather.main.humidity}
             </div>
         )
     }

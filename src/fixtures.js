@@ -56,7 +56,7 @@ export const weather = [
         ],
         "base": "stations",
         "main": {
-            "temp": "280.32",
+            "temp": "240.32",
             "pressure": "1012",
             "humidity": "81",
             "temp_min": "279.15",
@@ -98,7 +98,7 @@ export const weather = [
         ],
         "base": "stations",
         "main": {
-            "temp": "280.32",
+            "temp": "260.32",
             "pressure": "1012",
             "humidity": "81",
             "temp_min": "279.15",

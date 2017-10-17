@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import WeatherDisplayList from '../WeatherDisplayList'
+import {connect} from 'react-redux'
 
 class WeatherForm extends Component {
 
@@ -12,7 +13,8 @@ class WeatherForm extends Component {
         return (
             <div>
                 <form>
-                    <input value = {this.state.value}/>
+                    <input value = {this.state.value}
+                    onChange={this.handleChange}/>
                     <input type = "submit"
                            value = "submit"/>
                 </form>
@@ -20,6 +22,16 @@ class WeatherForm extends Component {
             </div>
         )
     }
+
+    handleChange = ev => {
+        this.setState({
+            value: ev.target.value
+        })
+    }
+
+
 }
 
-export default WeatherForm
+export default connect(state => ({
+    weather: state.weather
+}))(WeatherDisplayList)

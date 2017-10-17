@@ -1,17 +1,29 @@
-import React from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import WeatherDisplay from '../WeatherDisplay'
 
+class WeatherDisplayList extends Component {
 
-function WeatherDisplayList(props) {
-    const articleElements = props.weather.map(weather =>
+    static propTypes = {
+        weather: PropTypes.array.isRequired
+    };
+
+    render() {
+        const {weather} = this.props;
+        const weatherElements = this.props.weather.map(weather =>
         <li key={weather.id}>
             <WeatherDisplay weather={weather}/>
-        </li>)
-    return (
+        </li>);
+
+        return (
         <ul>
-            {articleElements}
+            {weatherElements}
         </ul>
-    )
+        )
+    }
 }
 
 export default WeatherDisplayList
+
+
+

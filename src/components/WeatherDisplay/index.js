@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class WeatherDisplay extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isOpen: false
-        }
-    }
+    static propTypes = {
+        weather: PropTypes.shape({
+            name: PropTypes.string,
+            sys: PropTypes.object,
+            main: PropTypes.object
+        }).isRequired
+    };
 
     render() {
         const {weather} = this.props;

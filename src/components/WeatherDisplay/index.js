@@ -6,8 +6,13 @@ class WeatherDisplay extends Component {
     static propTypes = {
         weather: PropTypes.shape({
             name: PropTypes.string,
-            sys: PropTypes.object,
-            main: PropTypes.object
+            sys: PropTypes.shape({
+                country: PropTypes.string
+            }),
+            main: PropTypes.shape({
+                pressure: PropTypes.string,
+                humidity: PropTypes.string
+            })
         }).isRequired
     };
 

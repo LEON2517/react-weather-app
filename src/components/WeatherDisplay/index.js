@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {deleteArticle} from '../../AC'
 
 class WeatherDisplay extends Component {
 
@@ -34,8 +35,9 @@ class WeatherDisplay extends Component {
     }
 
     handleDelete = () => {
-
+        this.props.deleteArticle(this.props.weather.id)
     }
 }
 
-export default WeatherDisplay
+
+export default connect(null,{deleteArticle})(WeatherDisplay)

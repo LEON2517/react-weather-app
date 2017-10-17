@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import WeatherDisplay from '../WeatherDisplay'
-import {connect} from 'react-redux'
 
 class WeatherDisplayList extends Component {
 

@@ -34,4 +34,4 @@ class WeatherForm extends Component {
 
 export default connect(state => ({
     weather: state.weather
-}))(WeatherDisplayList)
+}))(WeatherForm)

@@ -35,7 +35,8 @@ class WeatherDisplay extends Component {
     }
 
     handleDelete = () => {
-        this.props.deleteArticle(this.props.weather.id)
+        const {deleteArticle, weather} = this.props;
+        deleteArticle(weather.id)
     }
 }
 

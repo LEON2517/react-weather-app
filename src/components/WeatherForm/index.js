@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import WeatherDisplayList from '../WeatherDisplayList'
 import {connect} from 'react-redux'
+import {weatherSelector} from '../../selectors'
 
 class WeatherForm extends Component {
 
@@ -33,5 +34,5 @@ class WeatherForm extends Component {
 }
 
 export default connect(state => ({
-    weather: state.weather
+    weather: weatherSelector(state)
 }))(WeatherForm)

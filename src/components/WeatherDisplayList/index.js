@@ -10,7 +10,7 @@ class WeatherDisplayList extends Component {
 
     render() {
         const {weather} = this.props;
-        const weatherElements = this.props.weather.map(weather =>
+        const weatherElements = weather.map(weather =>
         <li key={weather.id}>
             <WeatherDisplay weather={weather}/>
         </li>);

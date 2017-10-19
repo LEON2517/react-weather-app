@@ -9,6 +9,7 @@ class WeatherForm extends Component {
         value: ''
     };
 
+
     render() {
         const {weather} = this.props;
         return (
@@ -19,7 +20,7 @@ class WeatherForm extends Component {
                     <input type = "submit"
                            value = "submit"/>
                 </form>
-                <WeatherDisplayList weather = {weather}/>
+                <WeatherDisplayList weather={weather}/>
             </div>
         )
     }
@@ -29,8 +30,6 @@ class WeatherForm extends Component {
             value: ev.target.value
         })
     }
-
-
 }
 
 export default connect(state => ({

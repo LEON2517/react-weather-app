@@ -8,10 +8,11 @@ class WeatherDisplayList extends Component {
         weather: PropTypes.array.isRequired
     };
 
+
     render() {
         const { weather } = this.props;
         const weatherElements = weather.map(weather =>
-        <li key={weather.id}>
+        <li key={weather.getIn(['id'])}>
             <WeatherDisplay weather={weather}/>
         </li>);
 
@@ -23,6 +24,7 @@ class WeatherDisplayList extends Component {
     }
 
 }
+
 
 export default WeatherDisplayList
 

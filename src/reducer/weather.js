@@ -1,15 +1,16 @@
 import { DELETE_WEATHERDISPLAY } from '../constants'
 import {weather as defaultWeather} from '../fixtures'
-//import {Map} from 'immutable'
+import {arrToMap} from './utils'
+import {fromJS} from 'immutable'
 
-//const defaultState = new Map(defaultWeather);
+const defaultState = new fromJS(defaultWeather);
 
-export default (weather = defaultWeather, action) => {
+export default (state = defaultState, action) => {
     const {type, payload} = action;
 
     switch (type) {
         case DELETE_WEATHERDISPLAY:
-            return weather.filter(weather => weather.id !== payload.id)
+            return state.delete(payload.id)
     }
-    return weather
+    return state
 }

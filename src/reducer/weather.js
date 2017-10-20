@@ -1,9 +1,16 @@
 import { DELETE_WEATHERDISPLAY } from '../constants'
 import {weather as defaultWeather} from '../fixtures'
 import {arrToMap} from './utils'
-import {fromJS} from 'immutable'
+import {Map, Record} from 'immutable'
 
-const defaultState = new fromJS(defaultWeather);
+const WeatherRecord = Record({
+    id: null,
+    name: null,
+    main: {},
+    sys: {},
+});
+
+const defaultState = new Map(arrToMap(defaultWeather, WeatherRecord));
 
 export default (state = defaultState, action) => {
     const {type, payload} = action;

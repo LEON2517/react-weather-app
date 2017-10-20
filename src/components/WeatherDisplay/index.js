@@ -24,11 +24,11 @@ class WeatherDisplay extends Component {
         const { weather } = this.props;
         return (
             <div>
-                <h3>{weather.get('name')},{weather.getIn(['sys','country'])}</h3>
+                <h3>{weather.name},{weather.sys.country}</h3>
                 <ul>
-                    <li>{weather.getIn(['main','temp'])}</li>
-                    <li>{weather.getIn(['main','pressure'])}</li>
-                    <li>{weather.getIn(['main','humidity'])}</li>
+                    <li>{weather.main.temp}</li>
+                    <li>{weather.main.pressure}</li>
+                    <li>{weather.main.humidity}</li>
                 </ul>
                 <button onClick={this.handleDelete}>Delete</button>
             </div>
@@ -37,7 +37,7 @@ class WeatherDisplay extends Component {
 
     handleDelete = () => {
         const {deleteArticle, weather} = this.props;
-        deleteArticle(weather.get('id'))
+        deleteArticle(weather.id)
     }
 }
 

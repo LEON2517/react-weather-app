@@ -12,7 +12,7 @@ class WeatherDisplayList extends Component {
     render() {
         const { weather } = this.props;
         const weatherElements = weather.map(weather =>
-        <li key={weather.getIn(['id'])}>
+        <li key={weather.id}>
             <WeatherDisplay weather={weather}/>
         </li>);
 

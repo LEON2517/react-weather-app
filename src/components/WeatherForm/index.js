@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import WeatherDisplayList from '../WeatherDisplayList'
 import {connect} from 'react-redux'
 import {weatherSelector} from '../../selectors'
+import {loadAllWeather} from '../../AC'
 
 class WeatherForm extends Component {
 
@@ -9,8 +10,13 @@ class WeatherForm extends Component {
         value: ''
     };
 
+    componentDidMount() {
+        this.props.loadAllWeather()
+    }
+
 
     render() {
+        console.log('---', 'rendering weather list')
         const {weather} = this.props;
         return (
             <div>
@@ -34,4 +40,4 @@ class WeatherForm extends Component {
 
 export default connect(state => ({
     weather: weatherSelector(state)
-}))(WeatherForm)
+}),{loadAllWeather})(WeatherForm)

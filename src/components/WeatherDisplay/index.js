@@ -13,8 +13,8 @@ class WeatherDisplay extends Component {
                 country: PropTypes.string
             }),
             main: PropTypes.shape({
-                pressure: PropTypes.string,
-                humidity: PropTypes.string
+                pressure: PropTypes.number,
+                humidity: PropTypes.number
             })
         }).isRequired
     };

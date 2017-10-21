@@ -1,4 +1,4 @@
-import {createSelector} from 'reselect'
+import {mapToArr} from '../reducer/utils'
 
-export const weatherSelector = state => state.weather.valueSeq().toArray();
+export const weatherSelector = state => state.weather.entities.valueSeq().toArray();
 

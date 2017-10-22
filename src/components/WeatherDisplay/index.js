@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {deleteArticle} from '../../AC'
+import {deleteWeather} from '../../AC'
 
 
 class WeatherDisplay extends Component {
@@ -36,10 +36,10 @@ class WeatherDisplay extends Component {
     }
 
     handleDelete = () => {
-        const {deleteArticle, weather} = this.props;
-        deleteArticle(weather.id)
+        const {deleteWeather, weather} = this.props;
+        deleteWeather(weather.id)
     }
 }
 
 
-export default connect(null,{deleteArticle})(WeatherDisplay)
+export default connect(null,{deleteWeather})(WeatherDisplay)

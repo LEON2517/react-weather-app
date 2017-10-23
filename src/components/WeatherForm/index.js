@@ -24,9 +24,10 @@ class WeatherForm extends Component {
         )
     }
 
+
     handleSubmit = ev => {
         ev.preventDefault();
-        this.props.addLocation(this.state);
+        this.props.addLocation(this.state.value);
         this.setState({
             value: ''
         })

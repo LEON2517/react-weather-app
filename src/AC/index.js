@@ -14,6 +14,8 @@ export function loadAllWeather() {
     }
 }
 
+
+
 export function addLocation(value) {
     return {
         type: ADD_LOCATION,

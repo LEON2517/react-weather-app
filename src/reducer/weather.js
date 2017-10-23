@@ -1,6 +1,6 @@
 import { DELETE_WEATHER, LOAD_ALL_WEATHER, SUCCESS, START, ADD_LOCATION } from '../constants'
 import { arrToMap } from './utils'
-import { Map, Record } from 'immutable'
+import { Record } from 'immutable'
 
 const WeatherRecord = Record({
     id: null,
@@ -33,9 +33,8 @@ export default (state = defaultState, action) => {
                 .set('loading', false)
                 .set('loaded', true);
 
-        case ADD_LOCATION:
-            return state.mergeIn('entities', arrToMap([response], WeatherRecord))
+        case ADD_LOCATION + SUCCESS:
+            return state.set('entities', arrToMap([response], WeatherRecord))
     }
-
     return state
 }

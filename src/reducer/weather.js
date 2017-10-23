@@ -1,6 +1,6 @@
 import { DELETE_WEATHER, LOAD_ALL_WEATHER, SUCCESS, START, ADD_LOCATION } from '../constants'
 import { arrToMap } from './utils'
-import { Record } from 'immutable'
+import { OrderedMap, Record } from 'immutable'
 
 const WeatherRecord = Record({
     id: null,
@@ -10,7 +10,7 @@ const WeatherRecord = Record({
 });
 
 const ReducerRecord = Record({
-    entities: arrToMap([], WeatherRecord),
+    entities: new OrderedMap([]),
     loading: false,
     loaded: false
 });
@@ -33,8 +33,14 @@ export default (state = defaultState, action) => {
                 .set('loading', false)
                 .set('loaded', true);
 
+        case ADD_LOCATION  + START:
+            return state.set('loading', true);
+
         case ADD_LOCATION + SUCCESS:
-            return state.set('entities', arrToMap([response], WeatherRecord))
+            return state
+                .mergeIn(['entities'], arrToMap([response], WeatherRecord))
+                .set('loading', false)
+                .set('loaded', true);
     }
     return state
 }

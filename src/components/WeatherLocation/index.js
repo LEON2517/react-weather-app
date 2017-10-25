@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {deleteLocation} from '../../AC'
 
+import CSSTransion from 'react-addons-css-transition-group'
+import './style.css'
+
 
 class WeatherLocation extends Component {
 
@@ -22,15 +25,26 @@ class WeatherLocation extends Component {
 
     render() {
         const { weather } = this.props;
+
         return (
             <div>
+                <CSSTransion
+                    transitionName="weather"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}
+                    transitionAppearTimeout={500}
+                    transitionAppear
+                    component="section"
+                >
                 <h3>{weather.name},{weather.sys.country}</h3>
                 <ul>
-                    <li>{weather.main.temp}</li>
-                    <li>{weather.main.pressure}</li>
-                    <li>{weather.main.humidity}</li>
+                    <li>Температура: {weather.main.temp}&#176;C</li>
+                    <li>Давление: {weather.main.pressure}</li>
+                    <li>Влажность: {weather.main.humidity}</li>
+                    <li>Описание: {weather.weather[0].description}</li>
                 </ul>
                 <button onClick={this.handleDelete}>Delete</button>
+                </CSSTransion>
             </div>
         )
     }

@@ -6,11 +6,12 @@ const WeatherRecord = Record({
     id: null,
     name: null,
     main: {},
-    sys: {}
+    sys: {},
+    weather: []
 });
 
 const ReducerRecord = Record({
-    entities: new OrderedMap([]),
+    entities: arrToMap([], WeatherRecord),
     loading: false,
     loaded: false
 });

@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import {Route, Link, Switch} from 'react-router-dom'
+import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import AboutPage from './Routes/AboutPage'
 import HomePage from './Routes/HomePage'
+import NotFoundPage from './Routes/NotFoundPage'
 
 
 export default class Root extends Component {
@@ -9,13 +10,15 @@ export default class Root extends Component {
         return (
             <div>
                 <div>
-                    <div><Link to="/">Home</Link></div>
+                    <div><Link to="/home">Home</Link></div>
                     <div><Link to="/about">About</Link></div>
                 </div>
                 <div>
                     <Switch>
+                        <Redirect from="/" exact to="home" />
                         <Route path="/about" component={AboutPage} exact/>
-                        <Route path="/" component={HomePage} exact/>
+                        <Route path="/home" component={HomePage} exact/>
+                        <Route path="*" component={NotFoundPage} exact/>
                     </Switch>
                 </div>
             </div>

@@ -18,6 +18,7 @@ export default class Root extends Component {
                         <Redirect from="/" exact to="home" />
                         <Route path="/about" component={AboutPage} exact/>
                         <Route path="/home" component={HomePage} exact/>
+                        <Route path="/error" render={() => <h1>Error</h1>}/>
                         <Route path="*" component={NotFoundPage} exact/>
                     </Switch>
                 </div>

@@ -33,6 +33,11 @@ export default (state = defaultState, action) => {
                 .set('loading', false)
                 .set('loaded', true);
 
+        case GET_LOCATION_COORDS + FAIL:
+            return state
+                .set('loading', false)
+                .set('loaded', false);
+
         case ADD_LOCATION  + START:
             return state.set('loading', true);
 
@@ -41,6 +46,11 @@ export default (state = defaultState, action) => {
                 .mergeIn(['entities'], arrToMap([response], WeatherRecord))
                 .set('loading', false)
                 .set('loaded', true);
+
+        case ADD_LOCATION + FAIL:
+            return state
+                .set('loading', false)
+                .set('loaded', false);
 
     }
     return state

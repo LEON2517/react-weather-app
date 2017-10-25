@@ -1,5 +1,5 @@
-export const DELETE_WEATHER = 'DELETE_WEATHER';
-export const LOAD_ALL_WEATHER = 'LOAD_ALL_WEATHER';
+export const DELETE_LOCATION = 'DELETE_LOCATION';
+export const GET_LOCATION_COORDS = 'GET_LOCATION_COORDS';
 
 export const START = '_START';
 export const SUCCESS = '_SUCCESS';

@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import WeatherDisplayList from '../WeatherDisplayList'
+import WeatherLocationList from '../WeatherLocationList'
 import {connect} from 'react-redux'
 import {addLocation} from '../../AC'
-
 
 class WeatherForm extends Component {
 
@@ -10,16 +9,17 @@ class WeatherForm extends Component {
         value: ''
     };
 
+
     render() {
 
         return (
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    <input value = {this.state.value}
-                    onChange={this.handleChange}/>
-                    <input type = "submit" value = "submit"/>
+                <form onSubmit={this.handleSubmit}>
+                    <input value={this.state.value}
+                           onChange={this.handleChange}/>
+                    <input type="submit" value="submit"/>
                 </form>
-                <WeatherDisplayList/>
+                <WeatherLocationList/>
             </div>
         )
     }
@@ -37,10 +37,10 @@ class WeatherForm extends Component {
         this.setState({
             value: ev.target.value
         })
-    }
+    };
 }
 
 
 export default connect(null, (dispatch) => ({
-    addLocation: (value) => dispatch(addLocation(value))
+    addLocation: (value) => dispatch(addLocation(value)),
 }))(WeatherForm)

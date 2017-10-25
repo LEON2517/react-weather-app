@@ -1,19 +1,19 @@
-import { DELETE_WEATHER, LOAD_ALL_WEATHER, ADD_LOCATION } from '../constants'
+import { DELETE_LOCATION, GET_LOCATION_COORDS, ADD_LOCATION } from '../constants'
 
-export function deleteWeather(id) {
+export function deleteLocation(id) {
     return {
-        type: DELETE_WEATHER,
+        type: DELETE_LOCATION,
         payload: { id }
     }
 }
 
-export function loadAllWeather() {
+export function getLocationCoords() {
     return {
-        type: LOAD_ALL_WEATHER,
-        callAPI: `http://api.openweathermap.org/data/2.5/weather?q=London&appid=ad7ce277ead15b2f7e1bdc6f7e6b7f3b`
+        type: GET_LOCATION_COORDS,
+        //callAPI: `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=ad7ce277ead15b2f7e1bdc6f7e6b7f3b`
+        callAPI: `http://api.openweathermap.org/data/2.5/weather?q=Sankt-Peterburg&appid=ad7ce277ead15b2f7e1bdc6f7e6b7f3b` //заглушка
     }
 }
-
 
 
 export function addLocation(value) {

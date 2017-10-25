@@ -1,4 +1,4 @@
-import { DELETE_WEATHER, LOAD_ALL_WEATHER, SUCCESS, START, ADD_LOCATION } from '../constants'
+import { DELETE_LOCATION, GET_LOCATION_COORDS, SUCCESS, START, FAIL, ADD_LOCATION } from '../constants'
 import { arrToMap } from './utils'
 import { OrderedMap, Record } from 'immutable'
 
@@ -21,13 +21,13 @@ export default (state = defaultState, action) => {
     const { type, payload, response } = action;
 
     switch (type) {
-        case DELETE_WEATHER:
+        case DELETE_LOCATION:
             return state.deleteIn(['entities', payload.id]);
 
-        case LOAD_ALL_WEATHER + START:
+        case GET_LOCATION_COORDS + START:
             return state.set('loading', true);
 
-        case LOAD_ALL_WEATHER + SUCCESS:
+        case GET_LOCATION_COORDS + SUCCESS:
             return state
                 .set('entities', arrToMap([response], WeatherRecord))
                 .set('loading', false)
@@ -41,6 +41,7 @@ export default (state = defaultState, action) => {
                 .mergeIn(['entities'], arrToMap([response], WeatherRecord))
                 .set('loading', false)
                 .set('loaded', true);
+
     }
     return state
 }

@@ -1,19 +1,20 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import WeatherDisplay from '../WeatherDisplay'
+import WeatherLocation from '../WeatherLocation'
 import {connect} from 'react-redux'
 import {weatherSelector} from '../../selectors'
-import {loadAllWeather} from '../../AC'
+import {getLocationCoords} from '../../AC'
 import Loader from '../Loader'
 
-class WeatherDisplayList extends Component {
+class WeatherLocationList extends Component {
 
     static propTypes = {
         weather: PropTypes.array.isRequired
     };
 
     componentDidMount() {
-        this.props.loadAllWeather()
+        const {loaded, loading, getLocationCoords} = this.props;
+        if(!loaded && !loading) getLocationCoords()
     }
 
 
@@ -21,7 +22,7 @@ class WeatherDisplayList extends Component {
         const { weather, loading } = this.props;
         const weatherElements = weather.map(weather =>
         <li key={weather.id}>
-            <WeatherDisplay weather={weather}/>
+            <WeatherLocation weather={weather}/>
         </li>);
 
         if(loading) return <Loader/>;
@@ -32,14 +33,14 @@ class WeatherDisplayList extends Component {
         </ul>
         )
     }
-
 }
 
 
 export default connect(state => ({
     weather: weatherSelector(state),
     loading: state.weather.loading,
-}),{loadAllWeather})(WeatherDisplayList)
+    loaded: state.weather.loaded
+}),{getLocationCoords})(WeatherLocationList)
 
 
 

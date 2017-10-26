@@ -24,3 +24,71 @@
     opacity: 0.01;
     transition: opacity 300ms ease-in;
 }
+
+.thunderstorm {
+    background-color: #555d80;
+    width: 225px;
+    height: 175px;
+
+}
+
+.drizzle {
+    background-color: #88929e;
+    width: 225px;
+    height: 175px;
+
+}
+
+.rain {
+    background-color: #88929e;
+    width: 225px;
+    height: 175px;
+
+}
+
+.snow {
+    background-color: #fafafa;
+    width: 225px;
+    height: 175px;
+}
+
+.atmosphere {
+    background-color: #88929e;
+    width: 225px;
+    height: 175px;
+
+}
+
+.clear {
+    background-color: #f6be25;
+    width: 225px;
+    height: 175px;
+
+}
+
+.clouds {
+    background-color: #457ad1;
+    width: 225px;
+    height: 175px;
+}
+
+.extreme {
+    background-color: #34b679;
+    width: 225px;
+    height: 175px;
+
+}
+
+.additional {
+    background-color: #fafafa;
+    width: 225px;
+    height: 175px;
+
+}
+
+.unknown {
+    background-color: #fafafa;
+    width: 225px;
+    height: 175px;
+
+}

@@ -10,7 +10,7 @@ export default store => next => action => {
     next({
         ...rest,
         type: type + START
-    })
+    });
 
 
     //dev only!!!!

@@ -1,4 +1,4 @@
-import { DELETE_LOCATION, GET_LOCATION_COORDS, SUCCESS, START, FAIL, ADD_LOCATION } from '../constants'
+import { DELETE_LOCATION, GET_LOCATION_COORDS, SUCCESS, START, FAIL, ADD_LOCATION} from '../constants'
 import { arrToMap } from './utils'
 import { OrderedMap, Record } from 'immutable'
 
@@ -52,6 +52,7 @@ export default (state = defaultState, action) => {
             return state
                 .set('loading', false)
                 .set('loaded', false);
+
 
     }
     return state

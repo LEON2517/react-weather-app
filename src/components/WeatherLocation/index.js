@@ -27,7 +27,7 @@ class WeatherLocation extends Component {
         const { weather } = this.props;
 
         return (
-            <div>
+            <div className = {this.getClassName()}>
                 <CSSTransion
                     transitionName="weather"
                     transitionEnterTimeout={500}
@@ -36,12 +36,14 @@ class WeatherLocation extends Component {
                     transitionAppear
                     component="section"
                 >
-                <h3>{weather.name},{weather.sys.country}</h3>
+                <h2 className="location">{weather.name} | {weather.sys.country}</h2>
                 <ul>
-                    <li>Температура: {weather.main.temp}&#176;C</li>
-                    <li>Давление: {weather.main.pressure}</li>
-                    <li>Влажность: {weather.main.humidity}</li>
-                    <li>Описание: {weather.weather[0].description}</li>
+                    <li className="temp"><h1>{Math.round(weather.main.temp)} &#176;C</h1></li>
+                    <div className="main">
+                        <li>pressure: {weather.main.pressure}</li>
+                        <li>humidity: {weather.main.humidity}</li>
+                        <li>description: {weather.weather[0].description}</li>
+                    </div>
                 </ul>
                 <button onClick={this.handleDelete}>Delete</button>
                 </CSSTransion>
@@ -52,8 +54,35 @@ class WeatherLocation extends Component {
     handleDelete = () => {
         const {deleteLocation, weather} = this.props;
         deleteLocation(weather.id)
+    };
+
+    getClassName() {
+        const {weather} = this.props;
+        const code = weather.weather[0].id;
+        console.log('code:', code);
+
+        if (code >= 200 && code < 300) {
+            return 'thunderstorm';
+        } else if (code >= 300 && code < 400) {
+            return 'drizzle';
+        } else if (code >= 500 && code < 600) {
+            return 'rain';
+        } else if (code >= 600 && code < 700) {
+            return 'snow';
+        } else if (code >= 700 && code < 800) {
+            return 'atmosphere';
+        } else if (code  === 800) {
+            return 'clear';
+        } else if (code >= 801 && code < 900) {
+            return 'clouds';
+        } else if (code >= 900 && code < 907) {
+            return 'extreme';
+        } else if (code >= 907 && code < 1000) {
+            return 'additional';
+        } else {
+            return 'unknown';
+        }
     }
 }
-
 
 export default connect(null,{deleteLocation})(WeatherLocation)

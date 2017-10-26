@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import WeatherLocation from '../WeatherLocation'
 import {connect} from 'react-redux'
 import {weatherSelector} from '../../selectors'
-import {getLocationCoords} from '../../AC'
+import {getLocationCoords, addIcon} from '../../AC'
 import Loader from '../Loader'
 
 class WeatherLocationList extends Component {
@@ -13,8 +13,8 @@ class WeatherLocationList extends Component {
     };
 
     componentDidMount() {
-        const {loaded, loading, getLocationCoords} = this.props;
-        if(!loaded && !loading) getLocationCoords()
+        const {loaded, loading, getLocationCoords, addIcon} = this.props;
+        if(!loaded && !loading) getLocationCoords() && addIcon()
     }
 
 
@@ -40,7 +40,7 @@ export default connect(state => ({
     weather: weatherSelector(state),
     loading: state.weather.loading,
     loaded: state.weather.loaded
-}),{getLocationCoords})(WeatherLocationList)
+}),{getLocationCoords, addIcon})(WeatherLocationList)
 
 
 

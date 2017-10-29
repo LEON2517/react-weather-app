@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {deleteLocation} from '../../AC'
-
 import CSSTransion from 'react-addons-css-transition-group'
 import './style.css'
 
@@ -27,7 +26,7 @@ class WeatherLocation extends Component {
         const { weather } = this.props;
 
         return (
-            <div className = {this.getClassName()}>
+            <div className = "container-weather-location">
                 <CSSTransion
                     transitionName="weather"
                     transitionEnterTimeout={500}
@@ -36,16 +35,19 @@ class WeatherLocation extends Component {
                     transitionAppear
                     component="section"
                 >
-                <h2 className="location">{weather.name} | {weather.sys.country}</h2>
-                <ul>
-                    <li className="temp"><h1>{Math.round(weather.main.temp)} &#176;C</h1></li>
-                    <div className="main">
-                        <li>pressure: {weather.main.pressure}</li>
-                        <li>humidity: {weather.main.humidity}</li>
-                        <li>description: {weather.weather[0].description}</li>
+                    <div className={this.getClassName()}>
+
+                            <h1>{weather.name} | {weather.sys.country}</h1>
+                            <h2>{Math.round(weather.main.temp)} &#176;C</h2>
+
+
+                            <p>pressure: {weather.main.pressure}</p>
+                            <p>humidity: {weather.main.humidity}</p>
+                            <p>description: {weather.weather[0].description}</p>
+
+                        <button onClick={this.handleDelete}
+                                className="button-delete">DELETE</button>
                     </div>
-                </ul>
-                <button onClick={this.handleDelete}>Delete</button>
                 </CSSTransion>
             </div>
         )

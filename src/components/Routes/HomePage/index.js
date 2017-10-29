@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import WeatherForm from '../WeatherForm'
+import WeatherForm from '../../WeatherForm'
+import WeatherLocationList from '../../WeatherLocationList'
+import './style.css'
 
 class HomePage extends Component {
     static propTypes = {
@@ -8,9 +10,9 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
-                <h1>React Weather App</h1>
+            <div className="container-home-page">
                 <WeatherForm />
+                <WeatherLocationList />
             </div>
         );
     }

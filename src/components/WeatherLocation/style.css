@@ -25,70 +25,132 @@
     transition: opacity 300ms ease-in;
 }
 
+
+.container-weather-location {
+    height: 196px;
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+
+.button-delete {
+    margin-top: 10px;
+    width: 80px;
+    height: 22px;
+    background: #00bcd4;
+    color: white;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: none;
+}
+
+.button-delete:hover {
+    background: #39c7e2;
+}
+
+
+
 .thunderstorm {
-    background-color: #555d80;
-    width: 225px;
-    height: 175px;
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(255, 0, 255, 0.1) 27%);
 
 }
 
 .drizzle {
-    background-color: #88929e;
-    width: 225px;
-    height: 175px;
-
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 0, 0, 0.1) 27%);
 }
 
 .rain {
-    background-color: #88929e;
-    width: 225px;
-    height: 175px;
-
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 0, 0, 0.1) 27%);
 }
 
 .snow {
+    padding-left: 4px;
+    height: 196px;
     background-color: #fafafa;
-    width: 225px;
-    height: 175px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 200, 200, 0.1) 27%);
 }
 
 .atmosphere {
-    background-color: #88929e;
-    width: 225px;
-    height: 175px;
-
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 0, 0, 0.1) 27%);
 }
 
 .clear {
-    background-color: #f6be25;
-    width: 225px;
-    height: 175px;
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(255, 255, 0, 0.2) 27%);
 
 }
 
 .clouds {
-    background-color: #457ad1;
-    width: 225px;
-    height: 175px;
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 0, 255, 0.1) 27%);
 }
 
 .extreme {
-    background-color: #34b679;
-    width: 225px;
-    height: 175px;
-
+    padding-left: 4px;
+    height: 196px;
+    background-color: #fafafa;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 255, 0, 0.1) 27%);
 }
 
 .additional {
+    padding-left: 4px;
+    height: 196px;
     background-color: #fafafa;
-    width: 225px;
-    height: 175px;
-
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 200, 200, 0.1) 27%);
 }
 
 .unknown {
+    padding-left: 4px;
+    height: 196px;
     background-color: #fafafa;
-    width: 225px;
-    height: 175px;
-
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, white 73%, rgba(0, 200, 200, 0.1) 27%);
 }

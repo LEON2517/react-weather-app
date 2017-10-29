@@ -4,7 +4,8 @@ import WeatherLocation from '../WeatherLocation'
 import {connect} from 'react-redux'
 import {weatherSelector} from '../../selectors'
 import {getLocationCoords, addIcon} from '../../AC'
-import Loader from '../Loader'
+import Loader from '../Loader/index.js'
+import './style.css'
 
 class WeatherLocationList extends Component {
 

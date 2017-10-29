@@ -1,0 +1,89 @@
+body {
+    background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 23px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+p {
+    line-height: 12px;
+    margin-bottom: 5px;
+}
+
+a{
+    font-size: 20px;
+    color: #00bcd4;
+    float: left;
+    padding-left: 20px;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+li {
+    list-style-type: none;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.container-weather-form {
+    width: 420px;
+    margin: auto;
+
+}
+
+.form-input {
+    font-size: 16px;
+    width: 280px;
+    height: 35px;
+    padding-left: 10px;
+    margin-right: 15px;
+    outline-color: #00bcd4;
+    border-radius: 2px;
+    border: none;
+}
+
+.form-submit {
+    font-weight: 600;
+    font-size: 16px;
+    width: 113px;
+    height: 40px;
+    background: #00bcd4;
+    color: white;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: none;
+    text-decoration: none;
+    outline: 0;
+}
+
+.form-submit:hover {
+    background: #39c7e2;
+}
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import WeatherLocationList from '../WeatherLocationList'
 import {connect} from 'react-redux'
 import {addLocation} from '../../AC'
+import './style.css'
 
 class WeatherForm extends Component {
 
@@ -13,13 +13,17 @@ class WeatherForm extends Component {
     render() {
 
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input value={this.state.value}
-                           onChange={this.handleChange}/>
-                    <input type="submit" value="submit"/>
-                </form>
-                <WeatherLocationList/>
+            <div className="container-weather-form">
+                <h1>React Weather App</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        <input value={this.state.value}
+                               onChange={this.handleChange}
+                               className="form-input"
+                               placeholder="Start typing your location"/>
+                        <input type="submit"
+                               value="ADD CITY"
+                               className="form-submit"/>
+                    </form>
             </div>
         )
     }
